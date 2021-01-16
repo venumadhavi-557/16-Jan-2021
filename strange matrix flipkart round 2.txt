@@ -1,0 +1,14 @@
+STRANGE MATRIX
+
+
+class Solution:
+    def get(self, i, j):
+      return a.get(i,j)
+     
+    def solve(self, R, C):
+        ans=0
+        for i in range(R):
+            while C>0 and a.get(i,C-1)==1:
+                ans=i
+                C-=1
+        return ans;
