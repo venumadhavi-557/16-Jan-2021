@@ -1,0 +1,26 @@
+MIC AND JURY
+class Solution:
+    def micsandjury (self, N, M, teams):
+        l=1
+        ma=1
+        for i in range(M):
+            if(ma<teams[i]):
+                ma=teams[i]
+                r=ma
+        ans=1
+        while l<=r:
+            mid = (l+r)//2
+            groups=0
+            for i in range(M):
+                if teams[i]%mid!=0:
+                    groups = groups+(teams[i]//mid) + 1
+                else:
+                    groups = groups+(teams[i]//mid)
+            
+            if(groups>N):
+                l = mid+1
+            else:
+                ans=mid
+                r=mid-1
+        
+        return ans
